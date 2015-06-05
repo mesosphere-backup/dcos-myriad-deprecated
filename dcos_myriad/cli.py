@@ -57,6 +57,31 @@ def _cmds():
     return [
 
         cmds.Command(
+            hierarchy=['myriad', 'state'],
+            arg_keys=[],
+            function=_state),
+
+        cmds.Command(
+            hierarchy=['myriad', 'config'],
+            arg_keys=[],
+            function=_config),
+
+        cmds.Command(
+            hierarchy=['myriad', 'webui'],
+            arg_keys=[],
+            function=_webui),
+
+        cmds.Command(
+            hierarchy=['myriad', 'flexup'],
+            arg_keys=['<count>','<profile>'],
+            function=_flexup),
+
+        cmds.Command(
+            hierarchy=['myriad', 'flexdown'],
+            arg_keys=['<count>'],
+            function=_flexdown),
+
+        cmds.Command(
             hierarchy=['myriad'],
             arg_keys=['--info'],
             function=_info),
@@ -74,3 +99,27 @@ def _info(info):
     emitter.publish(__doc__.split('\n')[0])
     return 0
 
+def _state():
+	
+    emitter.publish("myriad state is not implemented yet!")
+    return 0
+
+def _config():
+
+    emitter.publish("myriad config is not implemented yet!")
+    return 0
+
+def _webui():
+	
+    emitter.publish("myriad webui is not implemented yet!")
+    return 0
+
+def _flexup(count, profile):
+	
+    emitter.publish("myriad flexup is not implemented yet!")
+    return 0
+
+def _flexdown(count):
+
+    emitter.publish("myriad flexdown is not implemented yet!")
+    return 0
